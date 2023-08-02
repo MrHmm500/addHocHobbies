@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="menu d-flex">
-            <div class="menuItem" v-for="route in routes">
+        <div class="row justify-content-center">
+            <div class="menuItem col-sm" v-for="route in routes">
                 <div
                     @click="updateRoute(route)"
                 >
@@ -13,6 +13,7 @@
             <component
                 :is="route"
                 v-if="activeRoute === route"
+                @change-route="updateRoute"
             >
             </component>
         </div>
@@ -20,19 +21,19 @@
 </template>
 
 <script>
-import Child from "./Home/Child.vue";
-import HekkingChild from "./Home/HekkingChild.vue";
+import Overview from "./Home/Overview.vue";
+import Add from "./Add/Add.vue";
 import routes from "../routes.json";
 export default {
     data () {
         return {
-            activeRoute: 'child',
+            activeRoute: 'overview',
             routes: routes
         }
     },
     components: {
-        Child,
-        HekkingChild
+        Overview,
+        Add
     },
     methods: {
         updateRoute (routeName) {
