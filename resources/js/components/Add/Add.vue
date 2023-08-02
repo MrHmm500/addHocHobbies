@@ -3,8 +3,8 @@
     email: <input type="email" v-model="tradeRequest.email" class="email" /><br />
     phone: <input type="text" v-model="tradeRequest.phone" class="phone" /><br />
     description: <input type="text" v-model="tradeRequest.description" class="description" /><br />
-    photo: <input type="text" v-model="tradeRequest.photo" class="photo" />
-    <input @click="saveTradeRequest()"  type="button"/>
+    photo: <input type="text" v-model="tradeRequest.photo" class="photo" /><br />
+    <input @click="saveTradeRequest()"  type="button">opslaan</button>
 </template>
 
 <script>
