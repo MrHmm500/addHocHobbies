@@ -23,13 +23,13 @@ export default {
     },
     methods: {
         saveTradeRequest() {
-            // axios.post('/api/tradeRequests', this.tradeRequest).then((response) => {
-            //     if (response.code === 200) {
+            axios.post('/api/tradeRequests', this.tradeRequest).then((response) => {
+                if (response.code === 200) {
                     this.$emit('change-route', 'overview')
-                // } else {
-                //     alert(response.message)
-                // }
-            // })
+                } else {
+                    alert(response.message)
+                }
+            })
         }
     }
 }
